@@ -24,7 +24,7 @@ function generateTables() {
 
   let htmlToAdd = "<tr>"
   classList.forEach((element, idx) => {
-    htmlToAdd += `<th><span id="${idx}" role="button" draggable="true" ondragstart="drag(event)">${element}</span></th>`
+    htmlToAdd += `<th style="width: 11%"><span id="${idx}" role="button" draggable="true" ondragstart="drag(event)">${element}</span></th>`
 
     isLastRow = idx + 1 == classList.length
 
@@ -33,7 +33,7 @@ function generateTables() {
         const remainder = 4 - ((idx + 1) % 4)
 
         for (let i = 0; i < remainder; i++) {
-          htmlToAdd += `<th></th>`
+          htmlToAdd += `<th style="width: 11%"></th>`
         }
       }
 
