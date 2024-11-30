@@ -16,6 +16,25 @@ function loadSpecificTable(idx) {
   flashSuccess(`${idx + 1} órarend sikeresen betöltve!`)
 }
 
+function deleteCurrentTable() {
+  const number = getCurrentNumber()
+
+  if (!number) {
+    generateTables(classList)
+
+    return
+  }
+
+  const data = getSavedData()
+
+  data.splice(number - 1, 1)
+
+  saveData(data)
+  loadSavedButtons()
+  generateTables(classList)
+  flashSuccess("Órarend sikeresen törölve")
+}
+
 function loadTimeTable(timeTable) {
   if (timeTable.length < 1) return
 
