@@ -2,8 +2,6 @@ const startHour = 8
 const endHour = 16
 const lessonTime = 45 //min
 
-const classList = ["Matematika", "Matematika", "Matematika", "Magyar nyelvtan", "Magyar nyelvtan", "Magyar nyelvtan", "Magyar irodalom", "Magyar irodalom", "Magyar irodalom", "Ének", "Ének", "Ének", "Fizika", "Fizika"]
-
 function generateTables() {
   const tbody = document.getElementById("tbody")
 
