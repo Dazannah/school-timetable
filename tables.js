@@ -35,6 +35,40 @@ function deleteCurrentTable() {
   flashSuccess("Órarend sikeresen törölve")
 }
 
+function saveDataFromCurrentTable() {
+  const data = getSavedData()
+
+  const classList = []
+  const timeTable = []
+
+  let idx = 0
+
+  while ((item = document.getElementById(`class-th-${idx}`))) {
+    classList.push(item.innerText)
+
+    idx++
+  }
+
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < endHour - startHour; j++) {
+      item = document.getElementById(`table-th-${j}${i}`)
+
+      if (!timeTable[j]) timeTable.push([])
+
+      timeTable[j].push({ text: item.innerText, id: item.id })
+    }
+  }
+  const number = getCurrentNumber()
+
+  if (!number) {
+    data.push({ classList, timeTable })
+    setCurrentNumber(data.length)
+  } else data[number - 1] = { classList, timeTable }
+
+  saveData(data)
+  loadSavedButtons()
+}
+
 function loadTimeTable(timeTable) {
   if (timeTable.length < 1) return
 
