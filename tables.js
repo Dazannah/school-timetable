@@ -9,6 +9,13 @@ function newTables() {
   flashSuccess("Órarendek alaphelyzetbe állítva!")
 }
 
+function loadSpecificTable(idx) {
+  const dataToLoad = getSavedData()[idx]
+
+  generateTables(dataToLoad.classList, `${idx + 1}`, dataToLoad.timeTable)
+  flashSuccess(`${idx + 1} órarend sikeresen betöltve!`)
+}
+
 function loadTimeTable(timeTable) {
   if (timeTable.length < 1) return
 
