@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <script src="flashMessage.js"></script>
+    <script src="manageData.js"></script>
     <script src="tables.js"></script>
     <script src="index.js"></script>
   </head>
@@ -17,6 +18,7 @@
       </div>
       <div id="flash-message" class="fixed-top mt-3 mx-auto" style="max-width: 25%"></div>
       <div class="mt-3">
+        <h2 id="loaded-number"></h2>
         <table class="table table-bordered">
           <thead>
             <tr>
@@ -30,6 +32,12 @@
           </thead>
           <tbody id="tbody"></tbody>
         </table>
+      </div>
+      <div id="saved" class="mt-3"></div>
+      <div class="mt-3">
+        <button class="btn btn-primary" onclick="newTables()">Új</button>
+        <button class="btn btn-primary" onclick="saveDataFromCurrentTable()">Mentés</button>
+        <button class="btn btn-primary" onclick="deleteCurrentTable()">Törlés</button>
       </div>
     </div>
   </body>
